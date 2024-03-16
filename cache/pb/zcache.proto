@@ -1,0 +1,24 @@
+
+syntax="proto3";
+package pb;
+option go_package="./";
+/**
+ * @author: zurich
+ * @Date: 2024/3/16 11:53
+ */
+
+message Request{
+  string group=1;
+  string key=2;
+}
+
+message Response{
+  bytes value=1;
+}
+
+service GroupCache{
+  rpc Get(Request) returns(Response);
+}
+
+
+
